@@ -1,0 +1,21 @@
+// Here we describe what our services are
+// Which packages they use
+// Their Inputs, Outputs and error types.
+
+// The proto file also implements the RPC methods and services for the client
+// It defines the messages that the server-side and client-side interact with
+
+syntax = "proto3";
+
+message Empty {}
+
+// We define a data model called User
+message User {
+    string name = 1;
+    int32 age = 2;
+}
+
+// Collection of signatures of the different actions this service offers and what it returns
+service UserService {
+    rpc GetUser (Empty) returns (User) {}
+}
