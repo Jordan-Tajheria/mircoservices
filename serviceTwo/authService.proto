@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package authService;
+option objc_class_prefix = "RTG"; // Best practice to prefix class names with an acronym that represents the name of a class.
+
+// Define a Service
+// Define a data type here
+message AccountCredentials {
+    string username = 1; // Each property assigned an ID
+    string password = 2; // Each property assigned an ID
+}
+
+message OauthCredentials {
+    string token = 3;
+    uint32 timeoutSeconds = 4;
+}
+
+// Define the service containing methods here
+service AuthServiceRoutes {
+    // Basic function call, makes request and returns value
+    rpc Login(AccountCredentials) returns (OauthCredentials) {}
+    rpc Logout(OauthCredentials) returns (OauthCredentials) {}
+}
