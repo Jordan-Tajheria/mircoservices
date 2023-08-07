@@ -20,7 +20,7 @@ const options = {
 
  // Create the client
  const client = new UserService(
-    "localhost:3500",
+    "localhost:5000",
     grpc.credentials.createInsecure()
  );
 
