@@ -1,0 +1,14 @@
+{
+  "name": "serviceone",
+  "version": "1.0.0",
+  "description": "A example REST API microservice",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Jordan Roberts",
+  "license": "ISC",
+   "dependencies": {
+    "express": "^4.18.2"
+  }
+}
