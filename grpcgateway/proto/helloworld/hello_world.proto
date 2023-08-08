@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package helloworld;
 
-option go_package = "github.com/Jordan-Tajheria/mircoservices/proto";
+option go_package = "github.com/Jordan-Tajheria/mircoservices/grpcgateway";
 
 // The greeting service definition
 service Greeter {
