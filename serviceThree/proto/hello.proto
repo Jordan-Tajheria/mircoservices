@@ -1,0 +1,26 @@
+synatx = "proto3";
+
+option go_package = "github.com/busranurguner/grpc-gateway";
+
+import "google/api/annotations.proto";
+
+// Here is the overall greeting service definition where we define all our endpoints
+service Greeter { //Defines a service
+    //sends a greeting
+    rpc sayHello (HelloRequest) returns (HelloResponse) { // Defines the functionality of the service
+        option (google.api.http) = { // Adds the custom google.api.http HTTP to gRPC transcoding details.
+            post: "/v1/message" // Declares this gRPC method transcodes to the HTTP POST Method and the path /v1/message
+            body: "*" // Declares the body schema of the HTTP request
+        };
+    }
+}
+
+//The request message containing the user's name 
+message HelloRequest {
+    string name = 1;
+}
+
+// The requestmessage containing the greetings
+message HelloResponse {
+    string message = 1;
+}
